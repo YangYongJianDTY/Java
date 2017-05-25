@@ -1,0 +1,10 @@
+package practice_03.exe5;
+
+public class TestWorker {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+
+	}
+
+}

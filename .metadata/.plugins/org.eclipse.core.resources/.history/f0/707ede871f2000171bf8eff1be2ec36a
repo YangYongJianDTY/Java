@@ -1,0 +1,12 @@
+package com.extend_test;
+
+public class Add2 extends Add1{
+    public Add2(){
+    	i += 2;
+	    System.out.println(i);
+    }
+    public void add(int v){
+	    i += v * 2;
+        System.out.println(i);
+    }
+}

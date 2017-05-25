@@ -1,0 +1,13 @@
+package practice_03.exe6;
+
+public class Student {
+	protected int num;
+	protected String name;
+	protected int age;
+	
+	public Student(int num, String name, int age) {
+		this.num = num;
+		this.name = name;
+		this.age = age;
+	}
+}

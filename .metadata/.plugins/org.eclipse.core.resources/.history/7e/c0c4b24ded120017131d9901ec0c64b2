@@ -1,0 +1,46 @@
+package play;
+
+import java.util.Scanner;
+
+public class T_10 {
+	public static int count (String str, int index, int num) {
+		int temp = 0;
+		if(str.charAt(index) == num) {
+			temp++;
+		};
+		return temp;
+	}
+	public static void main(String[] args) {
+		System.out.println("请输入一位整数：");
+		Scanner scanner = new Scanner(System.in);
+		int aNum = scanner.nextInt();	//a接收整数
+		String str = aNum + "";	
+		System.out.println(str.length());
+		int [] nums = new int[10];
+		int max = 0, temp = 0;
+		
+		for(int i = 0; i <= 9; i++) {
+			for(int index = 0; index < str.length(); index++) {
+				nums[i] = count(str, index, i);
+			}
+			//if(nums[i] != 0) {
+				System.out.println("数字" + i + "出现了" + nums[i] + "次");
+			//}
+		}
+	//	for(int i = 0; i <= 9; i++) {
+	//		if(nums[i] != 0) {
+	//			System.out.println("数字" + i + "出现了" + nums[i] + "次");
+	//		}
+	//	}
+		for(int i = 9; i >= 0; i--) {
+			if(nums[i] > max) {
+				max = nums[i];
+				temp = i;
+			}
+			
+		}
+		System.out.println("最多的是" + temp + "，出现了" + max + "次");
+		
+		scanner.close();
+	}
+}

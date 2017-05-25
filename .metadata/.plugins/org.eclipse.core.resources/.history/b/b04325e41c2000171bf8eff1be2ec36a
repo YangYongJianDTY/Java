@@ -1,0 +1,11 @@
+package com.extend_test;
+
+public class Add1{
+	   public Add1(){
+	      System.out.println("调用了A的无参构造函数");
+	   }
+	   public Add1(String mess){
+	      System.out.println("调用了A的有参的构造函数,"+
+	         "参数内容为："+mess);
+	   }
+	}

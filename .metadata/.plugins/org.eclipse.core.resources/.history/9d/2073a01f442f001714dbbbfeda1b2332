@@ -1,0 +1,15 @@
+package practice_03.exe4;
+
+public class Student {
+	protected String name;
+	protected String className;
+	protected String course;
+	protected int score;
+	
+	public Student(String name, String className, String course, int score) {
+		this.name = name;
+		this.className = className;
+		this.course = course;
+		this.score = score;
+	}
+}

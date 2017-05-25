@@ -1,0 +1,34 @@
+package com.square;
+
+import com._abstract.Polygon;
+import com._interface.shape;
+
+public class Square extends Polygon implements shape {
+	private double length = 0;
+
+	public Square(double length) {
+		super(4);
+		this.length = length;
+	}
+
+	@Override
+	public double area() {
+		System.out.println("面积是" + length * length + ";");
+		return 0;
+	}
+
+	@Override
+	public double perimeter() {
+		System.out.println("周长是" + length * 4 + ";");
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		Square s1 = new Square(1.5);
+		s1.print();
+		s1.area();
+		s1.perimeter();
+
+	}
+
+}

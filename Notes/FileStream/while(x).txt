@@ -1,0 +1,2 @@
+while((x = fis.reader()) != -1) {
+}

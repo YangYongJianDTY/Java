@@ -1,0 +1,8 @@
+package com.extend_test;
+
+public class Test{
+	   public static void main(String [] args){
+	       //B b1 = new B();
+	       Add2 b2 = new Add2("ÄãºÃ");
+	   }
+	}

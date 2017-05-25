@@ -1,0 +1,13 @@
+package practice_03.exe3;
+
+public abstract class Animal {
+	protected int legs;
+	
+	protected Animal(int legs) {
+		this.legs = 0;
+	}
+	public abstract void eat();
+	public void walk() {
+		System.out.println("我是动物，我会走，我有" + this.legs + "条腿；");
+	};
+}

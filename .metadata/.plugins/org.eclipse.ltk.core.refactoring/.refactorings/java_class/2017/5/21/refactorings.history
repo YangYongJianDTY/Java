@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将包“com.chapter4.com”重命名为“com.chapter4.coms”&#x0D;&#x0A;－ 原始项目：“java_class”&#x0D;&#x0A;－ 原始元素：“java_class/src/com.chapter4.com”&#x0D;&#x0A;－ 重命名的元素：“java_class/src/com.chapter4.coms”&#x0D;&#x0A;－ 更新对已重构元素的引用&#x0D;&#x0A;－ 更新注释和字符串中出现的文本" description="重命名包“com.chapter4.com”" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.chapter4.com" name="com.chapter4.coms" qualified="false" references="true" stamp="1495690395842" textual="false" version="1.0"/>
+</session>

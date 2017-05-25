@@ -1,0 +1,66 @@
+package play;
+
+import java.util.Scanner;
+
+public class T_10 {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int a = scanner.nextInt();	//a接收整数
+		int j, k, l;	//j, k, l用来计数
+		int tp[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};	//tp[]就是代表数字
+		//int转String
+		String b = a + "";	//b是用来测量整数长度的
+		int number[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};	//number[]代表数字出现的次数
+		int max1 = number[0];	//情况一的次数最大值
+		int max2 = tp[0];	//情况二的数字最大值
+		int max3 = 0;	//情况二那个最大值出现的次数
+		int max4 = 0;	//情况一的最多次数的那个数字是几
+		int temp = 0;	//temp作情况判断用
+		//先把数字拆开，number[1]就是代表数字1出现的次数，number[2]代表数字2出现的次数
+		for(int i = b.length(); i >= 1; i--) {
+			j = (int) Math.pow(10, i);
+			k = (int) Math.pow(10, i - 1);
+			l = (a % j) / k;
+			number[l] ++;
+		}
+		//遍历数组，并找出最大的数字
+		for(int m = 0; m <= 9; m++) {
+			System.out.println("数字" + m + "出现了" + number[m] + "次");
+			//第一种情况，tp[]完全是再为第二种情况铺垫，tp[5]代表数字5，tp[4]代表数字4
+			if(number[m] == max1) {
+				tp[m] = m;
+			}
+			//第二种情况，把同样次数的数字用tp[]数组表示，同时记得先把当前最大的记录一下，否则会丢掉当前的最大值
+			if(number[m] > max1) {
+				max1 = number[m];
+				max4 = m;
+				tp[m] = m;
+			}
+		}
+
+		for(int p = 0; p <= 8; p++) {
+			if(number[p] == number[p+1]) {
+				if(number[p] != 0){
+					temp++;
+				}
+			}
+		}
+
+		if(temp == 0) {
+			System.out.println("最多的是" + max4 + "，出现了" + max1 + "次");
+		}
+
+		for(int n = 0; n <= 9; n++) {
+			if(tp[n] > max2) {
+				max3 = number[n];
+				max2 = n;
+			}
+		}
+
+		if(temp > 0) {
+			System.out.println("最多的中，最大的是" + max2 + "，出现了" + max3 + "次");
+		}
+		scanner.close();
+	}
+}

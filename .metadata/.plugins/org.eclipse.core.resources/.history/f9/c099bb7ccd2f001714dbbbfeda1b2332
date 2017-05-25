@@ -1,0 +1,10 @@
+package practice_03.exe6;
+
+public class TestStudent {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+
+	}
+
+}

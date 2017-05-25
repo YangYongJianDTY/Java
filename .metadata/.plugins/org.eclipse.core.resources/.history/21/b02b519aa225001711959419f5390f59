@@ -1,0 +1,19 @@
+package com.collection;
+
+import java.util.Arrays;
+import java.util.HashSet;
+
+public class RemoveRepeat {
+	
+	public static void remove(String[] str) {
+	
+		HashSet <String> hset = new HashSet<String> (Arrays.asList(str));
+		
+		System.out.println(hset);
+	}
+	public static void main(String[] args) {
+		String string[] = {"1","2","4","6","2","4","3"};
+		remove(string);
+	}
+
+}

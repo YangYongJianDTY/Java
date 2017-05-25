@@ -1,0 +1,90 @@
+package practice_03.exe4;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class TestStudent {
+	List <Student> s = new ArrayList();
+	
+	public void add() {
+		Student s1 = new Student("张    三", "class1", "Java", 85);
+		Student s2 = new Student("周乐儿", "class1", "C#  ", 79);
+		Student s3 = new Student("王    涛", "class2", "C#  ", 52);
+		Student s4 = new Student("李    明", "class2", "Java", 48);
+		Student [] ss = new Student[] {s1, s2, s3, s4};
+		s.addAll(Arrays.asList(ss));
+	}
+	
+	public void printInfo() {
+		Iterator <Student> it = s.iterator();
+		while(it.hasNext()) {
+			Student s = it.next();
+			System.out.println(s.name + "  " + s.className + " " 
+			+ s.course + " " + s.score);
+		}
+	}
+	
+	public void printClass() {
+		int score = 0, i = 0;
+		Iterator <Student> it = s.iterator();
+		while(it.hasNext()) {
+			Student s = it.next();
+			if(s.className == "class1") {
+				score += s.score;
+				i++;
+			}
+		}
+		double aver = score / i;
+		System.out.println("class1班的总分为" + score + "；平均分为" 
+				+ aver + "；");
+	}
+	
+/*	public void printCourse(String course) {
+		int score = 0, i = 0;
+		Iterator <Student> it = s.iterator();
+		while(it.hasNext()) {
+			Student s = it.next();
+			String c1 = new String(s.course);
+			String c2 = new String(course);
+			System.out.println(s.course);
+			System.out.println(course);
+			if(s.course == course || s.course.equals(course) || c1 == c2 || c1.equals(c2)) {
+				score += s.score;
+				i++;
+			}
+		}
+		double aver = score / i;
+		System.out.println(course + "课程的平均分为" 
+				+ aver + "；");
+	}*/
+	public void printCourse() {
+		int scoreJava = 0, scoreC = 0, i = 0, j = 0;
+		Iterator <Student> it = s.iterator();
+		while(it.hasNext()) {
+			Student s = it.next();
+			if(s.course == "Java") {
+				scoreJava += s.score;
+				i++;
+			}
+			if(s.course == "C#  ") {
+				scoreC += s.score;
+				j++;
+			}
+		}
+		double averJava = scoreJava / i;
+		double averC = scoreC / j;
+		System.out.println("Java课程的平均分为" + averJava + "；");
+		System.out.println("C#  课程的平均分为" + averC + "；");
+	}
+	
+	public static void main(String[] args) {
+		TestStudent ts = new TestStudent();
+		ts.add();
+		ts.printInfo();
+		ts.printClass();
+		ts.printCourse();
+	}
+
+}
